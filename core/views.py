@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Message
+from django.contrib import messages
 # Create your views here.
 def index(request):
     return render(request, 'core/index.html')
@@ -24,10 +25,12 @@ def message(request):
         message = request.POST['message']
 
 
-    m = Message.objects.create(
-        name = name,
-        email = email,
-        classes = classes,
-        message= message,
-    )
-    m.save()
+        m = Message.objects.create(
+            name = name,
+            email = email,
+            classes = classes,
+            message= message,
+        )
+        m.save()
+        messages.success(request, "Sent successfully")
+        return redirect('index')

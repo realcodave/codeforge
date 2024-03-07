@@ -1,0 +1,7 @@
+{% if messages %}
+<div style="width: 100%; height: 30px; background-color: green; color: white; text-align: center; font-weight: bold;">
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+</div>
+{% endif %}

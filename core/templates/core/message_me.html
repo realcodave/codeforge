@@ -5,15 +5,14 @@
         <div class="row align-items-center">
           <div class="col-lg-4">
             <div class="newsz-ltr-text">
-              <h2>Join us<br />and stay tuned!</h2>
-              <a href="contacts.html" title="" class="btn-default"
-                >Join Us <i class="fa fa-long-arrow-alt-right"></i
-              ></a>
+              <h2>Send Us<br />a message</h2>
+              
             </div>
             <!--newsz-ltr-text end-->
           </div>
           <div class="col-lg-8">
             <form action="{% url 'message' %}" method="post" class="newsletter-form">
+                {% csrf_token %}
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
@@ -31,14 +30,14 @@
                   <div class="form-group select-tg">
                     <select name="class" required>
                       <option value="">Choose a course</option>
-                      <option value="web dev">Web Development</option>
-                      <option value="python">Python Programming Language</option>
-                      <option value="data science">Data Science</option>
-                      <option value="data analysis">Data Analysis</option>
-                      <option value="cybersecurity">Cybersecurity</option>
-                      <option value="video editing">Video Editing</option>
-                      <option value="graphic design">Graphic Design</option>
-                      <option value="social media">Social Media Management</option>
+                      <option value="Web Development">Web Development</option>
+                      <option value="Python Programming Language">Python Programming Language</option>
+                      <option value="Data Science">Data Science</option>
+                      <option value="Data Analysis">Data Analysis</option>
+                      <option value="Cybersecurity">Cybersecurity</option>
+                      <option value="Video Editing">Video Editing</option>
+                      <option value="Graphic Design">Graphic Design</option>
+                      <option value="Social Media Management">Social Media Management</option>
                     </select>
                   </div>
                   <!--form-group end-->
@@ -52,6 +51,9 @@
                   </div>
                   <!--form-group end-->
                 </div>
+                <button type="submit" class="btn-default"
+                >Message Us <i class="fa fa-long-arrow-alt-right"></i
+              ></button>
               </div>
             </form>
             <!--newsletter-form end-->
