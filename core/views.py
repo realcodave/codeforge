@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Message
 # Create your views here.
 def index(request):
     return render(request, 'core/index.html')
@@ -23,4 +23,11 @@ def message(request):
         classes = request.POST['class']
         message = request.POST['message']
 
-        
+
+    m = Message.objects.create(
+        name = name,
+        email = email,
+        classes = classes,
+        message= message,
+    )
+    m.save()
