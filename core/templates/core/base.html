@@ -73,9 +73,9 @@
             <div class="navigation-bar d-flex flex-wrap align-items-center">
               <nav>
                 <ul>
-                  <li><a class="active" href="index.html" title="">Home</a></li>
+                  <li><a class="active" href="{% url 'index' %}" title="">Home</a></li>
                   <li>
-                    <a href="about.html" title="">About</a>
+                    <a href="{% url 'about' %}" title="">About</a>
                     <!-- <ul>
                       <li><a href="events.html" title="">Events</a></li>
                       <li>
@@ -86,7 +86,7 @@
                     </ul> -->
                   </li>
                   <li>
-                    <a href="classes.html" title="">Classes</a>
+                    <a href="{% url 'class' %}" title="">Classes</a>
                     <!-- <ul>
                       <li>
                         <a href="class-single.html" title="">Class Single</a>
@@ -109,7 +109,7 @@
                       <li><a href="post.html" title="">Blog Single</a></li>
                     </ul>
                   </li> -->
-                  <li><a href="contacts.html" title="">Contacts</a></li>
+                  <li><a href="{% url 'contact' %}" title="">Contacts</a></li>
                 </ul>
               </nav>
               <!--nav end-->
